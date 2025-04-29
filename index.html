@@ -6,59 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-        }
+    .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+    }
 
-        .mySlides {
-            display: none;
-        }
+    .mySlides {
+        display: none;
+    }
 
-        .mySlides img {
-            width: 100%;
-            border-radius: 10px;
-        }
+    .mySlides img {
+        width: 100%;
+        border-radius: 10px;
+    }
 
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
-            background-color: rgba(0,0,0,0.5);
-            border-radius: 0 3px 3px 0;
-        }
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px; /* slightly bigger */
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    user-select: none;
+    z-index: 1; /* make sure arrows are on top */
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
 
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
 
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
+    .dot {
+        cursor: pointer;
+        height: 13px;
+        width: 13px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
 
-        .dot {
-            cursor: pointer;
-            height: 13px;
-            width: 13px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-    </style>
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+</style>
+	
 </head>
 <body class="is-preload">
 
