@@ -1,199 +1,303 @@
 <!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Prologue by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Prologue by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
 
-		<!-- Header -->
-			<div id="header">
+        .mySlides {
+            display: none;
+        }
 
-				<div class="top">
+        .mySlides img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Adeijha Campbell</h1>
-							<p>Graphic Designer</p>
-						</div>
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 0 3px 3px 0;
+        }
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
 
-				</div>
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
 
-				<div class="bottom">
+        .dot {
+            cursor: pointer;
+            height: 13px;
+            width: 13px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
 
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body class="is-preload">
 
-				</div>
+    <!-- Header -->
+    <div id="header">
+        <div class="top">
+            <div id="logo">
+                <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+                <h1 id="title">Adeijha Campbell</h1>
+                <p>Graphic Designer</p>
+            </div>
 
-			</div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+                    <li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+                    <li><a href="#shop" id="shop-link"><span class="icon solid fa-shopping-cart">Shop</span></a></li>
+                    <li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+                    <li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
 
-		<!-- Main -->
-			<div id="main">
+        <div class="bottom">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+        </div>
+    </div>
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+    <!-- Main -->
+    <div id="main">
 
-							<header>
-								<h2 class="alt">Hi! I'm <strong>Adeijha</strong>, a <a href="http://html5up.net/license">BIS 23</a> student<br />
-and this website was created by <a href="http://html5up.net">me</a>.</h2>
-								<p>This website includes all the projects that I've worked on thus far.<br />
-								Please be mindful that the site is constantly being worked on.</p>
-							</header>
+        <!-- Intro -->
+        <section id="top" class="one dark cover">
+            <div class="container">
+                <header>
+                    <h2 class="alt">Hi! I'm <strong>Adeijha</strong>, a BIS 23 student<br />
+                    and this website was created by me.</h2>
+                    <p>This website includes all the projects that I've worked on thus far.<br />
+                    Please be mindful that the site is constantly being worked on.</p>
+                </header>
+                <footer>
+                    <a href="#portfolio" class="button scrolly">See all! 🤔</a>
+                </footer>
+            </div>
+        </section>
 
-							<footer>
-								<a href="#portfolio" class="button scrolly">See all! 🤔</a>
-							</footer>
+        <!-- Portfolio -->
+        <section id="portfolio" class="two">
+            <div class="container">
+                <header>
+                    <h2>Portfolio</h2>
+                </header>
+                <p>This is where you'll find different class assignments I've worked on throughout the semester.</p>
+                <div class="row">
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+                            <header>
+                                <h3><a href="https://adeijha.github.io/my-website/workstation-budget.pdf" target="_blank">Workstation Budget</a></h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+                            <header>
+                                <h3><a href="https://adeijha.github.io/my-website/home-mortgage-calculator/home-mortgage-calculator.html" target="_blank">Home Mortgage Calculator</a></h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+                            <header>
+                                <h3><a href="https://bis23.w3spaces.com/bis23codes.html" target="_blank">First HTML Website</a></h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+                            <header>
+                                <h3><a href="https://adeijha.github.io/my-website/simple-form-with-calculated-fields/simple-form-with-calculated-fields.html" target="_blank">Simple Form With Calculated Fields</a></h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+                            <header>
+                                <h3><a href="https://adeijha.github.io/my-website/mpg-calculator/" target="_blank">MPG Calculator</a></h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                            <header>
+                                <h3>BIS Future Projects</h3>
+                            </header>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-						</div>
-					</section>
+        <!-- Shop -->
+        <section id="shop" class="three">
+            <div class="container">
+                <header>
+                    <h2>Shop</h2>
+                </header>
+                <p>Welcome to my shop section! Here you'll find featured items and designs. Scroll through the slideshow below to preview some of my work.</p>
 
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
+                <div class="slideshow-container">
+                    <a href="https://www.bestbuy.com/site/skytech-gaming-shadow4-gaming-desktop-pc-amd-ryzen-5-7600-16gb-memory-nvidia-4060-500gb-nvme-ssd-black/6599076.p?skuId=6599076&extStoreId=950&utm_source=feed&ref=212&loc=18477434394&gad_source=1&gbraid=0AAAAAD-ORIjYdwNh1nWvPaGmX1XPvSELY&gclid=Cj0KCQjwzrzABhD8ARIsANlSWNN9zAN_s6Ssy0-klIAqXpjQIQTODuyht1Z_w0JTLKDPY_Lpw0tRWkcaAvvdEALw_wcB&gclsrc=aw.ds" target="_blank">
+					<div class="mySlides fade">
+                        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/825536cd-a573-4e88-be69-acec3bee26de.png;maxHeight=640;maxWidth=550;format=webp" alt="Skytech Gaming - SHADOW4 Gaming Desktop PC">
+                    </div>
+					</a>
+					<a href="https://www.amazon.com/Samsung-970-EVO-Plus-MZ-V7S1T0B/dp/B07MFZY2F2?th=1" target="_blank">
+                    <div class="mySlides fade">
+                        <img src="https://m.media-amazon.com/images/I/71OYNmVRFhL.jpg" alt="Samsung 970 EVO Plus NVMe M.2 SSD (1TB)">
+                    </div>
+					</a>
+					<a href="https://direct.playstation.com/en-us/buy-consoles/playstation5-pro-console?emcid=pa-co-520650&gad_source=1&gbraid=0AAAAADc1uAY7MnnVOew3GpIsUW-JSDhYd&gclid=Cj0KCQjwzrzABhD8ARIsANlSWNNC1VJiIUcVtc9Uv9KS1Vs92f2Q_c1z3jPaYdzxnHCbbRCaCkzWNz8aAh05EALw_wcB&gclsrc=aw.ds" target="_blank">
+                    <div class="mySlides fade">
+                        <img src="https://m.media-amazon.com/images/I/61vR3ovb2UL.jpg" alt="PS5 Pro">
+                    </div>
+					</a>
+					<a href="https://www.razer.com/gaming-chairs/Razer-Enki/RZ38-03720100-R3U1" target="_blank">
+                    <div class="mySlides fade">
+                        <img src="https://assets3.razerzone.com/FHKwqfnS6IwCzUcdD1VHDR5QmhI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhbc%2Fh5b%2F9249241956382%2F211021-enki-green-1500x1000-6.jpg" alt="Razer Enki">
+                    </div>
+					</a>
+					
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
 
-							<header>
-								<h2>Portfolio</h2>
-							</header>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </section>
 
-							<p>This is where you'll find different class assignments I've worked on throughout the semester. I hope you enjoy. Please be respectful, especially being that I've never really done this before. Thank you for your time.</p>
+        <!-- About Me -->
+        <section id="about" class="three">
+            <div class="container">
+                <header>
+                    <h2>About Me</h2>
+                </header>
+                <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+                <p>I'm going to college to become a data analyst. My hobbies include photography, gaming, cooking, and learning new things. I've always loved tech, and I'm excited to grow in the field.</p>
+            </div>
+        </section>
 
-							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-										<header>
-											<h3><a href="https://adeijha.github.io/my-website/workstation-budget.pdf" target="_blank">Workstation Budget</a></h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-										<header>
-											<h3><a href="https://adeijha.github.io/my-website/home-mortgage-calculator/home-mortgage-calculator.html" target="_blank">Home Mortgage Calculator</a></h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										
-										
-										<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3><a href="https://bis23.w3spaces.com/bis23codes.html" target="_blank" rel="noopener noreferrer">First HTML Website</a></h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-										<header>
-											<h3><a href="https://adeijha.github.io/my-website/simple-form-with-calculated-fields/simple-form-with-calculated-fields.html" target="_blank" rel="noopener noreferrer">Simple Form With Calculated Fields</a></h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-										<header>
-											<h3><a href="https://adeijha.github.io/my-website/mpg-calculator/" target="_blank" rel="noopener noreferrer">MPG Calculator</a></h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-										<header>
-											<h3>BIS Future Projects</h3>
-										</header>
-									</article>
-								</div>
-							</div>
+        <!-- Contact -->
+        <section id="contact" class="four">
+            <div class="container">
+                <header>
+                    <h2>Contact</h2>
+                </header>
+                <p>Contact me at: adeijha.campbell@mail.citytech.cuny.edu</p>
+                <form method="post" action="#">
+                    <div class="row">
+                        <div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+                        <div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+                        <div class="col-12">
+                            <textarea name="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <input type="submit" value="Send Message" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
 
-						</div>
-					</section>
+    <!-- Footer -->
+    <div id="footer">
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
 
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-							<header>
-								<h2>About Me</h2>
-							</header>
+    <!-- Slider Script -->
+    <script>
+        let slideIndex = 0;
+        let slides, dots;
 
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+        function showSlides() {
+            slides = document.getElementsByClassName("mySlides");
+            dots = document.getElementsByClassName("dot");
 
-							<p>Well, time to talk about me I guess. I'm going to college to become a data analyst. My hobbies include photography/vlogging, gaming, cooking, learning new things and much more. I've always had a love for tech, but I'm only recently coming to the realization that I wanted it to be my career. I'm hoping to just keep going up in life.</p>
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
 
-						</div>
-					</section>
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
 
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
 
-							<header>
-								<h2>Contact</h2>
-							</header>
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
 
-							<p>For any reason you need to contact me, my email would be adeijha.campbell@mail.citytech.cuny.edu. My number will be available upon request. Thank you.</p>
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
 
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
 
-						</div>
-					</section>
+        document.addEventListener("DOMContentLoaded", function () {
+            showSlides();
+        });
+    </script>
 
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
