@@ -50,7 +50,7 @@
 </head>
 <body>
 
-  <h2>Service Invoice Calculator</h2>
+  <h2>Product Invoice Calculator</h2>
 
   <div class="calculator">
     <table>
@@ -61,20 +61,26 @@
         <th>Subtotal</th>
       </tr>
       <tr>
-        <td>Skytech Blaze 3.0 Gaming PC (2024 Model)</td>
-        <td>$1,299</td>
+        <td>Skytech Gaming - SHADOW4 Gaming Desktop PC</td>
+        <td>$1,059.99</td>
         <td><input type="number" value="0" min="0" id="qty1"></td>
         <td>$<span id="subtotal1">0.00</span></td>
       </tr>
       <tr>
         <td>Samsung 970 EVO Plus NVMe M.2 SSD (1TB)</td>
-        <td>$89</td>
+        <td>$109.99</td>
         <td><input type="number" value="0" min="0" id="qty2"></td>
         <td>$<span id="subtotal2">0.00</span></td>
       </tr>
       <tr>
         <td>PS5 Pro</td>
         <td>$699.99</td>
+        <td><input type="number" value="0" min="0" id="qty3"></td>
+        <td>$<span id="subtotal3">0.00</span></td>
+      </tr>
+	<tr>
+        <td>Razer Enki</td>
+        <td>$499.99</td>
         <td><input type="number" value="0" min="0" id="qty3"></td>
         <td>$<span id="subtotal3">0.00</span></td>
       </tr>
@@ -93,7 +99,7 @@
     });
 
     function calculateTotal() {
-      const prices = [1299, 89, 699.99];
+      const prices = [1299, 109.99, 699.99, 499.99];
       let total = 0;
 
       for (let i = 0; i < prices.length; i++) {
