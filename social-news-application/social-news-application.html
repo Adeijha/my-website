@@ -2,91 +2,162 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Social News Program</title>
+    <title>Social News Application</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            margin: 0;
+            padding: 20px;
+        }
+        .app-container {
+            background: #fff;
+            max-width: 650px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 16px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .output {
+            white-space: pre-wrap;
+            background: #f0f3f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #3498db;
+        }
+        input, label {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+    </style>
 </head>
 <body>
-    <script>
-        // Social News Program
+<div class="app-container">
+    <h1>Social News Application</h1>
+    <button class="btn" onclick="showLinks()">Show Links</button>
+    <button class="btn" onclick="showAddForm()">Add Link</button>
+    <button class="btn" onclick="showRemoveForm()">Remove Link</button>
+    <button class="btn" onclick="quitApp()">Quit</button>
 
-        // Link constructor
-        function Link(title, url, author) {
-            this.title = title;
-            this.url = url.startsWith("http://") || url.startsWith("https://") ? url : `http://${url}`;
-            this.author = author;
+    <div id="form-area"></div>
+    <div id="output" class="output"></div>
+</div>
+
+<script>
+    function Link(title, url, author) {
+        this.title = title;
+        this.url = url.startsWith("http://") || url.startsWith("https://") ? url : `http://${url}`;
+        this.author = author;
+    }
+
+    const links = [];
+
+    function showLinks() {
+        const output = document.getElementById("output");
+        if (links.length === 0) {
+            output.textContent = "No links to display.";
+        } else {
+            output.textContent = links.map((link, index) =>
+                `${index}: "${link.title}" (${link.url}). Author: ${link.author}`
+            ).join("\n");
+        }
+        clearForm();
+    }
+
+    function showAddForm() {
+        const formArea = document.getElementById("form-area");
+        formArea.innerHTML = `
+            <label>Title: <input type="text" id="link-title"></label>
+            <label>URL: <input type="text" id="link-url"></label>
+            <label>Author: <input type="text" id="link-author"></label>
+            <button class="btn" onclick="addLink()">Submit</button>
+        `;
+        document.getElementById("output").textContent = "";
+    }
+
+    function addLink() {
+        const title = document.getElementById("link-title").value;
+        const url = document.getElementById("link-url").value;
+        const author = document.getElementById("link-author").value;
+
+        if (title && url && author) {
+            links.push(new Link(title, url, author));
+            document.getElementById("output").textContent = "Link added successfully!";
+        } else {
+            document.getElementById("output").textContent = "All fields are required.";
+        }
+        clearForm();
+    }
+
+    function showRemoveForm() {
+        if (links.length === 0) {
+            document.getElementById("output").textContent = "No links to remove.";
+            clearForm();
+            return;
         }
 
-        const links = [];
+        const formArea = document.getElementById("form-area");
+        formArea.innerHTML = `
+            <label>Enter index to remove: <input type="text" id="link-index"></label>
+            <button class="btn" onclick="removeLink()">Remove</button>
+        `;
+        document.getElementById("output").textContent = "";
+    }
 
-        function showMenu() {
-            return prompt(
-                "Choose an action:\n1: Show links\n2: Add a link\n3: Remove a link\n0: Quit"
-            );
-        }
+    function removeLink() {
+        const index = parseInt(document.getElementById("link-index").value, 10);
+        const output = document.getElementById("output");
 
-        function showLinks() {
-            if (links.length === 0) {
-                alert("No links to display.");
-            } else {
-                const list = links.map((link, index) => {
-                    return `${index}: "${link.title}" (${link.url}). Author: ${link.author}`;
-                }).join("\n");
-                alert(list);
-            }
-        }
-
-        function addLink() {
-            const title = prompt("Enter the link title:");
-            const url = prompt("Enter the link URL:");
-            const author = prompt("Enter the author's name:");
-
-            if (title && url && author) {
-                links.push(new Link(title, url, author));
-                alert("Link added successfully!");
-            } else {
-                alert("All fields are required to add a link.");
-            }
-        }
-
-        function removeLink() {
-            if (links.length === 0) {
-                alert("No links to remove.");
-                return;
-            }
-
-            let index;
-            do {
-                index = parseInt(prompt("Enter the index of the link to remove:"), 10);
-            } while (isNaN(index) || index < 0 || index >= links.length);
-
+        if (!isNaN(index) && index >= 0 && index < links.length) {
             links.splice(index, 1);
-            alert("Link removed successfully!");
+            output.textContent = "Link removed successfully!";
+        } else {
+            output.textContent = "Invalid index.";
         }
+        clearForm();
+    }
 
-        function main() {
-            let choice;
-            do {
-                choice = showMenu();
-                switch (choice) {
-                    case "1":
-                        showLinks();
-                        break;
-                    case "2":
-                        addLink();
-                        break;
-                    case "3":
-                        removeLink();
-                        break;
-                    case "0":
-                        alert("Goodbye! Redirecting you now...");
-                        window.location.href = "https://adeijha.github.io/my-website/"; // Change to your target URL
-                        break;
-                    default:
-                        alert("Invalid choice. Please enter 1, 2, 3, or 0.");
-                }
-            } while (choice !== "0");
+    function quitApp() {
+        const confirmQuit = confirm("Are you sure you want to quit?");
+        if (confirmQuit) {
+            alert("Redirected now.");
+            window.location.href = "https://adeijha.github.io/my-website"; // Replace with your desired URL
+        } else {
+            document.getElementById("output").textContent = "Quit cancelled. You can choose another action.";
+            clearForm();
         }
+    }
 
-        main();
-    </script>
+    function clearForm() {
+        document.getElementById("form-area").innerHTML = "";
+    }
+</script>
 </body>
 </html>
